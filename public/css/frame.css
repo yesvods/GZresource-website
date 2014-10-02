@@ -1,0 +1,118 @@
+* {
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  font-family:FontAweSome,Lucida Sans Unicode,'Microsoft YaHei',"微软雅黑", Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif !important;
+}
+body {
+  width:980px;
+  margin:auto;
+  /* overflow:hidden; */
+}
+.width15 {width: 15%;}
+.width25 {width: 25%;}
+.width30 {width: 30%;}
+.width33 {width: 33.33%;}
+.width40 {width: 40%;}
+.width50 {width: 50%;}
+.width60 {width: 60%;}
+.width66 {width: 66.66%}
+.width70 {width: 70%;}
+.width85 {width: 85%;}
+.width100 {width:100%}
+#topImg{
+  position:relative;
+  width:980px;
+  height:147px;
+}
+
+#searchDiv {
+  position: absolute;
+  top: 120px;
+  right: 15px;
+  width:100px;
+  height:20px;
+  background-color:rgba(0,0,0,0.2);
+  border-radius:10px;
+}
+#searchDiv input {
+  background-color:transparent;
+  border:none;
+  outline:none;
+  margin-left:10px;
+  width:65px;
+  height:20px;
+}
+#searchDiv a {
+  position:absolute;
+  right:5px;
+  bottom:2px;
+  text-decoration:none;
+  color:#ccc;
+}
+
+#searchDiv a:hover {
+  color:rgb(163,203,105);
+  cursor:pointer;
+}
+#topImg img {
+  width:100%;
+  margin:0;padding:0;
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); */
+}
+#topNavUl {
+  width:100%;
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); */
+  font-family:Lucida Sans Unicode,'Microsoft YaHei',"微软雅黑", Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+}
+#topNavUl li {
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+  height: 40px;
+  line-height: 40px;
+  border-right: 2px solid #dfdfdf;
+}
+
+#topNavUl li:last-child {
+  border-right: none;
+}
+#topNavUl li a {
+  display:block;
+  width:100%;
+  height:100%;
+  text-decoration:none;
+}
+#topNavUl li a:hover {
+  background: rgb(116,185,26);
+  font-weight: bold;
+	color: #fff;
+}
+
+body>footer {
+  margin-top:40px;
+  border-top:1px solid #666;
+}
+
+#bottomLinkUl,#copyrightUl{
+  display:inline-block;
+  width:100%;
+  text-align:center;
+  margin:10px;
+}
+
+#bottomLinkUl li,#copyrightUl li {
+  display:inline-block;
+  text-align:center;
+  list-style-type:none;
+  font-size:12px;
+  width:10%;
+  height:20px;
+  line-height:20px;
+}
+#copyrightUl li {
+  width:20%;
+}
+#bottomLinkUl li a {
+  text-decoration: none;
+}

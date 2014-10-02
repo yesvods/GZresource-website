@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>广州再生资源行业协会</title>
+  <link rel="stylesheet" href="./css/reset_css.css" />
+  <link rel="stylesheet" href="./css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./css/frame.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  
+  <!--[if lt IE 9]>
+  <script src="./js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+   <header>
+    <div id="topImg">
+      <img src="./img/index_02.gif" alt="首页顶图" usemap="#topMap"/>
+      <map name="topMap">
+        <area shape="rect" coords="724,0,854,28" href="" alt="" /> 
+        <area shape="rect" coords="854,0,955,28" href="" alt="" /> 
+      </map>
+      <div id="searchDiv">
+        <input type="text" id="searchContent"/><a href="" class="fa fa-search"></a>
+      </div>
+    </div>
+    
+    <nav>
+      <ul id="topNavUl">
+        <li><a href="/">首页</a>
+        </li><li><a href="/assocIntro">协会信息</a>
+        </li><li><a href="/rawPoicy">政策法规</a>
+        </li><li><a href="/businessNew">行业资讯</a>
+        </li><li><a href="/exportRequest">商圈</a>
+        </li><li><a href="/lastInfo">最新通知</a>
+        </li><li><a href="/weeklyPrice">价格行情</a>
+        </li><li><a href="/showVIP">会员服务</a>
+        </li><li><a href="/assocMag">协会期刊</a>
+        </li><li><a href="/contactUs">联系我们</a>
+        </li>
+      </ul> 
+    </nav>
+   </header>
+   <section>
+    <nav id="adTop">
+      <a href="#"><img src="./img/adSample.gif" alt="" /></a>
+    </nav>
+    <!-- VIP register -->
+    <% if(!user){%>
+    <article class="width33" id="loginDiv">
+       <header>
+         <span>会员登陆</span>
+        </header>
+       <form id="loginOuter" action="login" method="post">
+        <div id="usernameDiv">
+         <i class="fa fa-user"></i><input type="text" name="userName" placeholder="用户名" require/>
+        </div>
+        <div id="passwordDiv">
+         <i class="fa fa-lock"></i><input type="password" name="password" placeholder="密码" require/>
+        </div>
+        <a href="#" target="_blank">忘记密码</a>
+        <div id="regBtnGroup" style="clear:both;">
+         <input id="btnReg" type="button" value="注册"/>
+         <input id="btnLogin" type="submit" value="登陆"/>
+         <span style="color:red;font-size:12px;"><span>
+         <%if(err){%>
+          <i style="color:red;font-size:12px;"><%=err%></i>
+         <%}%>
+        </div>
+       </form>
+    </article><%}else{%><article class="width33" id="welcome">
+       <header>
+         <span>欢迎光临</span>
+        </header>
+        <article>
+          <img src="./img/user.jpg" width="150px" alt="" />
+          <ul>
+            <li>
+              <span>你好,<%=user.userName%></span>
+            </li>
+            <li>
+              <a href="/logout">退出登录</a>
+              <a href="/post">发布需求</a>
+            </li>
+          </ul>
+        </article>
+    </article><%}%><article class="postArt width33" id="lastInfo">
+      <header>
+        <span>最新通知</span>
+        <a href="/lastInfo">更多</a>
+      </header>
+      <ul class="postList">
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年HelloWorld!!!!!</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+      </ul>
+    </article><article class="postArt width33" id="businessNew">
+      <header>
+        <span>行业新闻</span>
+        <a href="/businessNew">更多</a>
+      </header>
+      <ul class="postList">
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年HelloWorld!!!!!</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+      </ul>
+    </article><article class="postArt width33" id="weeklyPrice">
+      <header>
+        <span>每周价格</span>
+        <a href="/weeklyPrice">更多</a>
+      </header>
+      <ul class="postList">
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年HelloWorld!!!!!</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+      </ul>
+    </article><article class="postArt width33" id="assoAct">
+      <header>
+        <span>协会动态</span>
+        <a href="/assocAct">更多</a>
+      </header>
+      <ul class="postList">
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年HelloWorld!!!!!</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+      </ul>
+    </article><article class="postArt width33" id="ieRequestInfo">
+      <header>
+        <span>供求信息</span>
+        <a href="/exportRequest">更多</a>
+      </header>
+      <ul class="postList">
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年HelloWorld!!!!!</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+      </ul>
+    </article><acticle class="width25" id="joinAssoc">
+      <a href=""><img src="./img/join.png" alt="" /></a>
+    </acticle><article class="width50" id="adMid">
+      <a href=""><img src="./img/adMid1.gif" alt="" />
+      </a><a href=""><img src="./img/adMid2.gif" alt="" />
+      </a>
+    </article><article class="width25" id="leaveMess">
+      <form action="">
+        <textarea name="contentMess" id="" cols="11" rows="5" placeholder="访客留言"></textarea>
+        <div id="leaveMessDiv">
+          <input type="text" name="contactMess" placeholder="联系方式"/> <i class="fa fa-check" id="subMess" title="提交">
+          </i>
+          <p style="color:red;font-size:12px;"></p>
+        </div>
+      </form>
+    </article><article id="showVIP" class="width100">
+      <header>会员风采</header>
+      <div id="vipDiv">
+        <ul id="vipUl">
+          <li><a href=""><img src="./imgs/1.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/2.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/3.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/4.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/5.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/6.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/7.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/4.jpg" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </article><article class="postArt width33" id="lastInfo">
+      <header>
+        <span>招标信息</span>
+        <a href="/bidInfo">更多</a>
+      </header>
+      <ul class="postList">
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年HelloWorld!!!!!</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+      </ul>
+    </article><article class="postArt width33" id="lastInfo">
+      <header>
+        <span>培训信息</span>
+        <a href="/undertakeTrain">更多</a>
+      </header>
+      <ul class="postList">
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年HelloWorld!!!!!</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+      </ul>
+    </article><article class="postArt width33" id="lastInfo">
+      <header>
+        <span>政策法规</span>
+        <a href="/rawPoicy">更多</a>
+      </header>
+      <ul class="postList">
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年HelloWorld!!!!!</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li><li>
+          <ul>
+            <li><a date-postid="123" href="">致会员企业的新年问候</a>
+            </li><li><time datetime="2011-1-12">2011/1/12</time></li>
+          </ul>
+        </li>
+      </ul>
+    </article><article class="width100" id="fLink">
+      <header>友情链接</header>
+      <ul>
+        </li><li><a href="http://www.baidu.com" target="_blank"><img src="./img/fl5.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl3.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl5.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl3.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl5.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl3.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl5.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl3.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl5.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl3.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl5.gif" alt="" /></a>
+        </li><li><a href=""><img src="./img/fl3.gif" alt="" /></a>
+        </li>
+      </ul>
+    </article><article class="width100" id="adBottom">
+      <nav id="adTop">
+        <a href="#"><img src="./img/adSample.gif" alt="" /></a>
+      </nav>
+    </article><article class="width100" id="showProduction">
+      <header>产品展示</header>
+      <div id="productionDiv">
+        <ul id="productionUl">
+          <li><a href=""><img src="./imgs/1.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/2.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/3.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/4.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/5.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/6.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/7.jpg" alt="" /></a>
+          </li><li><a href=""><img src="./imgs/4.jpg" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </article>
+   </section>
+   <footer>
+    <ul id="bottomLinkUl">
+      <li><a href="">联系我们</a>
+      </li><li><a href="">版权声明</a>
+      </li><li><a href="">广告服务</a>
+      </li><li><a href="">专业培训</a>
+      </li><li><a href="">人才招聘</a>
+      </li>
+    </ul>
+    <ul id="copyrightUl">
+      <li>备案号：XXXXXXXXXX
+      </li><li>版权所有：广州再生资源行业协会
+      </li>
+    </ul>
+   </footer>
+   <script type="text/javascript" src="./js/jquery.js"></script>
+   <script type="text/javascript" src="./js/underscore.js"></script>
+   <script type="text/javascript" src="./js/ImageScroll.js"></script>
+   <script type="text/javascript" src="./js/addclear.js"></script>
+   <script type="text/javascript">
+    $.fn.serializeObject = function(){
+      var o = {};
+      var a = this.serializeArray();
+      $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+      });
+      return o;
+    };
+    $("#vipUl").imageScroll();
+    $("#productionUl").imageScroll();
+    $("#usernameDiv input,#passwordDiv input,#leaveMessDiv input").addClear();
+    $('#btnReg').click(function(){window.location.replace("/reg");});
+    $('#btnLogin').click(function(e){
+      var $msg = $(this).next("span");
+      var form = $(this).closest("form");
+      var msg = form.serializeObject();
+      if(msg.userName=="" || msg.password==""){
+        $msg.text("请填写完整！");
+        $(this).after($msg);
+        e.preventDefault();
+      }
+      
+    });
+    $('#subMess').click(function(){
+      var $msg = $(this).next("p");
+      var form = $(this).closest("form");
+      var msg = form.serializeObject();
+      var _this = this;
+
+      if(msg.contentMess=="" || msg.contactMess==""){
+        $msg.text("请填写完整！")
+        return;
+      }
+      $.ajax({
+        type: "POST",
+        url:window.location.href+"leaveMess",
+        data:$(this).closest("form").serialize(),// 你的formid
+        async: false,
+        error: function(request) {
+          $msg.text("留言失败，请重试！");
+        },
+        beforeSend: function(){
+          $msg.text("正在留言...");
+        },
+        success: function(data) {
+          data = JSON.parse(data);
+          if(!data.err){
+            $msg.text("留言成功！")
+          }else{
+            $msg.text(data.err);
+          }
+        }
+       });
+    });
+   </script>
+</body>
+</html>

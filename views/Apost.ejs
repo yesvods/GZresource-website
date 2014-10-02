@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>广州再生资源行业协会</title>
+  <link rel="stylesheet" href="./css/reset_css.css" />
+  <link rel="stylesheet" href="./css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./css/frame.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/post.css" />
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="./css/font-awesome-ie7.min.css" />
+  <script src="./js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+   <header>
+    <div id="topImg">
+      <img src="./img/index_02.gif" alt="首页顶图" usemap="#topMap"/>
+      <map name="topMap">
+        <area shape="rect" coords="724,0,854,28" href="javascript:void(0);" alt="" /> 
+        <area shape="rect" coords="854,0,955,28" href="javascript:void(0);" alt="" /> 
+      </map>
+      <div id="searchDiv">
+        <input type="text" id="searchContent"/><a href="javascript:void(0);" class="fa fa-search"></a>
+      </div>
+    </div>
+    
+    <nav>
+      <ul id="topNavUl">
+        <li><a href="/">首页</a>
+        </li><li><a href="javascript:void(0);">协会信息</a>
+        </li><li><a href="javascript:void(0);">政策法规</a>
+        </li><li><a href="javascript:void(0);">行业资讯</a>
+        </li><li><a href="javascript:void(0);">商圈</a>
+        </li><li><a href="javascript:void(0);">最新通知</a>
+        </li><li><a href="javascript:void(0);">价格行情</a>
+        </li><li><a href="javascript:void(0);">会员服务</a>
+        </li><li><a href="javascript:void(0);">协会期刊</a>
+        </li><li><a href="javascript:void(0);">联系我们</a>
+        </li>
+      </ul> 
+    </nav>
+   </header>
+   <section id="postSection">
+     <header>
+      <h1>消息发布</h1>
+     </header>
+     <form method="post" action='/post' enctype="multipart/form-data" id="postForm">
+        <ul id="formTop">
+          <li><span>标题：</span><input type="text" name="title"/></li>
+          <li><span>发布类型：</span>
+          <select name="type" id="selectType">
+           <%for(var mo in moduleName){%>
+            <optgroup label="-------------"></optgroup>
+            <%for(var name in moduleName[mo]){%>
+              <option value=<%=name%> ><%=moduleName[mo][name]%> 
+            <%}%>
+           <%}%>
+          </select>
+          <li>插入Excel表格：<label id="iExcel">点击打开</label><div id="drop" style="display:none;">Drop an XLS or XML (2003) file here to see sheet data.</div></li>
+          <li id="fileUploadLi">
+            <span>文件上传：</span><i class="fa fa-plus"></i>
+            <ul id="fileUploadUl"></ul>
+          </li>
+        </ul>
+        <textarea name="content" id="postTextarea" cols="30" rows="10"></textarea>
+        <input type="submit" id="postSubmit" value="发布"/>
+        <span style="color:red;font-size:12px;" id="formMsg"><span>
+      </form>
+   </section>
+   <footer>
+    <ul id="bottomLinkUl">
+      <li><a href="javascript:void(0);">联系我们</a>
+      </li><li><a href="javascript:void(0);">版权声明</a>
+      </li><li><a href="javascript:void(0);">广告服务</a>
+      </li><li><a href="javascript:void(0);">专业培训</a>
+      </li><li><a href="javascript:void(0);">人才招聘</a>
+      </li>
+    </ul>
+    <ul id="copyrightUl">
+      <li>备案号：XXXXXXXXXX
+      </li><li>版权所有：广州再生资源行业协会
+      </li>
+    </ul>
+   </footer>
+   <script src="./js/jquery.js"></script>
+   <script src="./js/underscore.js"></script>
+   <script src="./js/jquery.form.js"></script>
+   <script src="./kindeditor/kindeditor-min.js"></script>
+   <script src="./kindeditor/lang/zh_CN.js"></script>
+   <script src="./js/xls.js"></script>
+   <script type="text/javascript">
+   /*
+    submit the post
+   */
+   $('#postForm').on('submit', function(e){
+    var $msg = $("#formMsg");
+    $('#postTextarea').html(window.editor.html());
+    e.preventDefault();
+    $(this).ajaxSubmit({
+      error: function(request) {
+        $msg.text("发布失败，请重试！");
+      }, beforeSend: function(){
+        $msg.text("正在发布...");
+      },
+      uploadProgress: function(e, position, total ,percentComplete){
+        $msg.text(percentComplete);
+      },
+      success: function(data) {
+        data = JSON.parse(data);
+        if(!data.err){
+          $msg.text("发布成功！")
+        }else{
+          $msg.text(data.err);
+        }
+      }
+    });
+    
+   });
+   /*
+    the excel effect
+   */
+   $('#iExcel').click(function(){
+    $(this).hide();
+    $('#drop').toggle();
+   });
+   /*
+    Online HTML Editor
+   */
+    var items = [
+        'source','justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist','insertunorderedlist','indent','outdent',
+        'subscript','superscript','formatblock', 'fontname', 'fontsize', '|','forecolor',
+        'hilitecolor','bold','italic', 'underline','strikethrough','lineheight','|',
+        'image','table','hr','emoticons','pagebreak','link', 'unlink','|','preview', 'print'
+    ];
+    KindEditor.ready(function(K) {
+      window.editor = K.create('#postTextarea',{
+        "items":items,
+        "height":'500px'
+      });
+    });
+    /*
+      Add a upload input field while click the #fileUploadUl>i
+      Remove the upload field
+    */
+    var count = 0;
+    $('#fileUploadLi>i').click(function(){
+      
+      $('#fileUploadUl').append($('<li><i class="fa fa-times"></i><input type="file" name="file'+(count++)+'"/></li>'));
+      $('#fileUploadUl li:last i').click(function(){
+        $(this).parent().remove();
+      });
+    });
+    function parseData(data) {
+      var result = "";
+      for(var i in _.keys(data)){
+        
+      }
+    }
+   </script>
+   
+   <script>
+    var use_worker = true;
+    function xlsworker(data, cb) {
+      var worker = new Worker('./js/xlsworker.js');
+      worker.onmessage = function(e) {
+        switch(e.data.t) {
+          case 'ready': break;
+          case 'e': console.error(e.data); break;
+          case 'xls': cb(e.data.d); break;
+        }
+      };
+      worker.postMessage(data);
+    }
+
+    function get_radio_value( radioName ) {
+      return "csv";
+      var radios = document.getElementsByName( radioName );
+      for( var i = 0; i < radios.length; i++ ) {
+        if( radios[i].checked ) {
+          return radios[i].value;
+        }
+      }
+    }
+
+    function to_json(workbook) {
+      var result = {};
+      workbook.SheetNames.forEach(function(sheetName) {
+        var roa = XLS.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+        if(roa.length > 0){
+          result[sheetName] = roa;
+        }
+      });
+      return result;
+    }
+
+    function to_csv(workbook) {
+      var result = {};
+      
+      workbook.SheetNames.forEach(function(sheetName) {
+        var csv = XLS.utils.make_csv(workbook.Sheets[sheetName]);
+        
+        if(csv.length > 0){
+          result[sheetName] = csv;
+        }
+      });
+      return result;
+    }
+
+    function to_formulae(workbook) {
+      var result = [];
+      workbook.SheetNames.forEach(function(sheetName) {
+        var formulae = XLS.utils.get_formulae(workbook.Sheets[sheetName]);
+        if(formulae.length > 0){
+          result.push("SHEET: " + sheetName);
+          result.push("");
+          result.push(formulae.join("\n"));
+        }
+      });
+      return result.join("\n");
+    }
+
+    var tarea = document.getElementById('b64data');
+    function b64it() {
+    /*
+      var cfb = XLS.CFB.read(tarea.value, {type: 'base64'});
+      var wb = XLS.parse_xlscfb(cfb);
+    */
+      var wb = XLS.read(tarea.value, {type:'base64'});
+      process_wb(wb);
+    }
+
+    function process_wb(wb) {
+      if(typeof Worker !== 'undefined') XLS.SSF.load_table(wb.SSF);
+      
+      var result = "";
+      switch(get_radio_value("format")) {
+        case "json":
+          output = JSON.stringify(to_json(wb), 2, 2);
+          break;
+        case "form":
+          output = to_formulae(wb);
+          break;
+        default:
+          output = to_csv(wb);
+      }
+ 
+      window.oo = output;
+      _.each(_.keys(output), function(key){
+        result+="<p>"+key+":</p>";
+        result+='<table style="width:100%;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">'
+        var table = output[key].split("\n");
+        _.each(table.slice(0,table.length-1), function(item){
+          result+="<tr>";
+          _.each(item.split(","), function(value){
+            result+="<td>"+value+"</td>";
+          });
+          result+="</tr>";
+        });
+        result+="</table>"
+      })
+      var editor = window.editor;
+      var html = editor.html();
+      html+=result;
+      editor.html(html);
+    }
+  
+    var drop = document.getElementById('drop');
+    function handleDrop(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var files = e.dataTransfer.files;
+      var i,f;
+      for (i = 0, f = files[i]; i != files.length; ++i) {
+        var reader = new FileReader();
+        var name = f.name;
+        reader.onload = function(e) {
+          var data = e.target.result;
+          if(use_worker && typeof Worker !== 'undefined') {
+            xlsworker(data, process_wb);
+          } else {
+            /*var cfb = XLS.CFB.read(data, {type: 'binary'});
+            //var arr = String.fromCharCode.apply(null, new Uint8Array(data));
+            //var cfb = XLS.CFB.read(btoa(arr), {type: 'base64'});
+            var wb = XLS.parse_xlscfb(cfb);*/
+            var wb = XLS.read(data, {type:'binary'});
+            process_wb(wb);
+          }
+        };
+        reader.readAsBinaryString(f);
+        //reader.readAsArrayBuffer(f);
+      }
+    }
+
+    function handleDragover(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'copy';
+    }
+
+    if(drop.addEventListener) {
+      drop.addEventListener('dragenter', handleDragover, false);
+      drop.addEventListener('dragover', handleDragover, false);
+      drop.addEventListener('drop', handleDrop, false);
+    }
+    </script>
+</body>
+</html>

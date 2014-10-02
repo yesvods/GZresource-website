@@ -1,0 +1,64 @@
+
+#postSection {
+  width:80%;
+  margin:30px auto;
+}
+#postSection header {
+  
+  padding:15px 10px;
+  border-bottom:1px dotted #333;
+}
+#postSection header h1:before {
+  content:"\f101";
+  color:#85AC45;
+}
+#postSection header h1{
+  font-size:22px;
+  font-weight:bold;
+}
+#formTop {
+  padding:20px;
+}
+#drop{
+	border:2px dashed #bbb;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:25px;
+	text-align:center;
+	font:20pt bold,"Vollkorn";color:#bbb
+}
+#formTop li {
+  line-height:30px;
+}
+#formTop label {
+  padding:5px;
+  border-radius:4px;
+  background-color:#444;
+  color:#ddd;
+  cursor:pointer;
+}
+#fileUploadLi>i {
+  display:inline-block;
+  width:25px;
+  height:25px;
+  line-height:25px;
+  text-align:center;
+  border-radius:10px;
+  background-color:#444;
+  color:#ddd;
+  cursor:pointer;
+}
+#fileUploadLi>i:hover { color:#fff;}
+
+#fileUploadUl li i {
+  color:#ddd;
+  padding:0 5px;
+  cursor:pointer;
+}
+#fileUploadUl li i:hover { color:#000;}
+
+#postTextarea {
+  display:block;
+  width:100%;
+}

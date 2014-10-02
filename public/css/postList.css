@@ -1,0 +1,242 @@
+/*
+  asider 
+*/
+#postClassify {
+  display:inline-block;
+  *display:inline;
+  vertical-align:top;
+  margin:65px 0 0 30px;
+  border:1px solid #ddd;
+}
+#postClassify header{
+  display:block;
+  padding:10px 0 10px 10px;
+  line-height:28px;
+  font-weight:bold;
+  font-size:28px;
+  text-shadow:0 1px 1px #999; 
+  background:url("../img/rig_h1.jpg");
+}
+#postClassify ul {
+    
+}
+#postClassify li {
+  padding:10px 0px 10px 20px;
+  
+}
+#postClassify li a{
+  font-size:22px;
+}
+/*
+    classifyList
+*/
+#classifyList {
+  display:inline-block;
+  *display:inline;
+  margin:30px 0 0 30px;
+}
+#classifyList header {
+  position:relative;
+  padding:5px 0 8px 0;
+  border-bottom:5px solid #186498;
+  font-size:22px;
+  font-weight:bold;
+}
+#classifyList header h1:before {
+  content:"\f101";
+  color:#85AC45;
+}
+#classifyList  ul{
+  border:1px solid #ddd;
+  border-bottom:none;
+  padding:10px;
+}
+#classifyList ul li {
+  padding:5px 0 5px 15px;;
+  line-height:18px;
+}
+#classifyList ul li span {
+  display:inline-block;
+  width:70%;
+  white-space:nowrap;
+  overflow:hidden;
+}
+#classifyList ul li a {
+  color:blue;
+}
+#classifyList ul li a:hover {
+  color:red;
+}
+#classifyList ul li a:visited {
+  color:#551ABB;
+}
+#classifyList ul li span:before {
+  content:url("../img/icon3.gif");
+  padding-right: 3px;
+}
+#classifyList ul li time {
+  display:inline-block;
+  width:30%;
+  text-align:right;
+}
+/*
+  Page Navgation
+*/
+.headPage {
+  
+  display:none;
+  border: #ddd 1px solid;
+  padding: 5px 8px;
+  color: #88af3f;
+  margin-right: 2px;
+  text-decoration: none;
+}
+.current {
+  border: #458a13 1px solid;
+  padding: 5px 8px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 2px;
+  background-color: #458a13;
+}
+#pageNav {
+  padding:20px 0;
+  border:1px solid #ddd;
+  border-top:none;
+  text-align:center;
+}
+.navLi{
+  display:inline-block;
+  border: #ddd 1px solid;
+  padding: 5px 8px;
+  color: #88af3f;
+  margin-right: 2px;
+  text-decoration: none;
+}
+.navLi:hover {
+  border: #85bd1e 1px solid;
+  color: #638425;
+  background-color: #f1ffd6;
+}
+/*
+  postContent
+*/
+#postContent {
+  display:inline-block;
+  *display:inline;
+  margin:30px 0 0 30px;
+}
+#postContent>header {
+  position:relative;
+  padding:5px 0 8px 0;
+  border-bottom:5px solid #186498;
+  font-size:22px;
+  font-weight:bold;
+}
+#postContent>header h1:before {
+  content:"\f101";
+  color:#85AC45;
+}
+#contentText {
+  margin-top:20px;
+}
+
+#contentText>header {
+  font-size:10px;
+  text-align:center;
+}
+#contentText>header h1{
+  padding-bottom:5px;
+  font-size:20px;
+  line-height:20px;
+  
+}
+#contentText>header time{
+  font-style:italic;
+  font-weight:bold;
+  margin:0 25px 0 5px;
+}
+#user {
+  font-style:italic;
+  font-weight:bold;
+  margin:0 5px;
+}
+#content{
+  margin-top:20px;
+  font-size:14px;
+  line-height:26px;
+  
+}
+/*
+  RegUI
+*/
+#VIPReg {
+  display:inline-block;
+  margin: 40px 0 0 30px ;
+}
+#VIPReg>header {
+  padding-bottom:10px;
+  border-bottom:1px solid #aaa;
+}
+#VIPReg>header li{
+  display:inline-block;
+  *display:inline;
+  padding:5px 20px;
+  background-color:#8DC045;
+  cursor:pointer;
+  -webkit-transition:all 0.1s ;
+}
+#VIPReg>header li:hover{
+  background-color:#45712B;
+}
+.regToggle {
+  background-color:#45712B !important;
+  font-weight:bold;
+  color:white;
+}
+#VIPReg {
+  display:inline-block;
+}
+#VIPReg form {
+  position:relative;
+  margin-top:20px;
+  margin-bottom:50px;
+}
+#VIPReg li {
+  display:inline-block;
+  line-height:40px;
+}
+.forceFill:before {
+  content:"*";
+  color:red;
+}
+#VIPReg li span {
+  display:inline-block;
+  *display:inline;
+  width:150px;
+  text-align:right;
+}
+#VIPReg li i {
+  display:inline-block;
+  width:80px;
+  color:red;
+  font-size:10px;
+}
+#VIPReg li input {
+  display:inline-block;
+  width:110px;
+}
+#VIPReg li div {
+  position:absolute;
+  width:100px;
+  height:40px;
+  border-radius:5px;
+  background-color:#82B24B;
+  text-align:center;
+  right:20px;
+  bottom:-50px;
+  cursor:pointer;
+}
+#VIPReg li div:hover {
+  background-color:#ABD54F;
+}

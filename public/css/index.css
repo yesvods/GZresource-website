@@ -1,0 +1,338 @@
+/*
+  for the AD.List.
+*/
+#adTop {display:block;width:100%;}
+#adTop a {margin:0;padding:0;display: inline-block;}
+#adTop img {margin:0;padding:0;display: inline-block;}
+
+/*
+  for the article list.
+*/
+.postArt {
+  margin:20px 0 0 0;
+  padding:10px;
+  display:inline-block;
+  font-size:10px;
+  font-family:Lucida Sans Unicode,'Microsoft YaHei',"微软雅黑", Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, sans-serif;
+  vertical-align:top;
+}
+.postArt header {
+  position:relative;
+  margin:0;
+  padding:4px;
+  width:100%;
+  height:28px;
+  line-height:28px;
+  text-align:right;
+  color:#fff;
+  border-radius:5px 5px 0 0;
+  background-image:url("../img/greenBar.png");
+  /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); */
+}
+
+.postArt header span {
+  position:absolute;
+  left:5px;
+  bottom:-2px;
+  font-size:16px;
+  font-weight:bold;
+}
+.postArt header span:before {
+  content: "\f0da";
+  padding:2px 4px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.postArt header a {
+  position:absolute;
+  right:3px;
+  font-weight:lighter;
+  font-size:8pt;
+}
+
+.postList {
+  padding:6px 4px;
+  border:1px solid #ddd;
+  background-color:#FaFaFa;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+.postList li {
+  list-style-type:none;
+}
+.postList li ul{
+  display:block;
+  height:33px;
+  line-height:33px;
+}
+.postList li ul li{
+  display:inline-block;
+  float:left;
+  font-size:10pt;
+  white-space:nowrap;
+}
+.postList li ul li:first-child {
+  width:70%;
+  overflow:hidden;
+  text-align:left;
+}
+.postList li ul li a {
+  font:inherit;
+  text-decoration:none;
+  cursor:pointer;
+}
+.postList li ul li:last-child {
+  width:30%;
+  overflow:hidden;
+  text-align:right;
+}
+.postList li ul a:hover{
+  color:red;
+}
+/*
+  Article for user login.
+*/
+#loginDiv,#welcome {
+  display:inline-block;
+  vertical-align:top;
+  margin-top:20px;
+  padding:10px;
+  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+#loginDiv>header,#welcome>header {
+  position:relative;
+  margin:0;
+  padding:4px;
+  width:100%;
+  height:28px;
+  line-height:28px;
+  text-align:right;
+  color:#fff;
+  border-radius:5px 5px 0 0;
+  background-image:url("../img/greenBar.png");
+  /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); */
+}
+#loginDiv>header span,#welcome>header span {
+  position:absolute;
+  left:5px;
+  bottom:-2px;
+  font-size:16px;
+  font-weight:bold;
+}
+#loginDiv>header span:before,#welcome>header span:before {
+  content: "\f0e5";
+  padding:2px 4px;
+  font-style: normal;
+  font-weight: bold;
+}
+#welcome article {
+  border:1px solid #ddd;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+#welcome img{
+  display:inline-block;
+  margin:20px 20px 6px 20px;
+  vertical-align:top;
+}
+#welcome ul {
+  display:inline-block;
+  margin-top:40px;
+  width:100px;
+}
+#welcome ul li {
+  margin:10px 0 0 0;
+}
+#welcome ul li button{
+  padding:5px 15px;
+}
+#welcome ul li a{
+  font-size:12px;
+}
+#welcome ul li span {
+  word-wrap:break-word;
+  word-break:break-all;
+}
+#loginOuter {
+  border:1px solid #ddd;
+  /* border-radius:5px 5px 0 0; */
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+#usernameDiv,#passwordDiv {
+  margin:20px 10px 10px 10px;
+  width:60%;
+  line-height:20px;
+  border:1px solid #aaa;
+  box-shadow:0 0 1px 1px #aaa inset;
+}
+#passwordDiv {
+  display:inline-block;
+}
+#loginDiv>span {
+  display:block;
+  margin:10px;
+  text-shadow: 0 0 1px rgba(0,0,0,0.2);
+}
+
+#loginDiv>a {
+  display:inline-block;
+}
+#usernameDiv i,#passwordDiv i {
+  margin:10px 0px 10px 10px;
+  padding-right:10px;
+  border-right:1px solid #ddd;
+  color:#555;
+}
+#usernameDiv input,#passwordDiv input {
+  width:60%;
+  margin:10px;
+  outline:0;
+  border:none;
+}
+#regBtnGroup {
+  padding-left:20px;
+  padding-bottom:3px;
+  /* border-bottom:1px dotted #999;   */
+}
+#regBtnGroup input {
+  padding:5px 10px;
+  margin-right:20px;
+}
+
+/* the second section  */
+
+/*
+   showVIP
+*/
+#showVIP,#showProduction {
+  position:relative;
+  margin:20px 0;
+  width:100%;
+  padding:10px;
+  height:150px;
+  border-top:1px solid #333;
+  border-bottom:1px solid #333;
+  
+}
+#showVIP header,#showProduction header {
+  position:absolute;
+  left:20px;
+  display:block;
+  padding-top:4px;
+  font-size:28px;
+  width:28px;
+  height:120px;
+  color:white;
+  background-color:#ddd;
+}
+#vipDiv,#productionDiv {
+  position:absolute;
+  left:200px;
+  display:inline-block;
+  width:680px;
+  overflow:hidden;
+}
+#vipUl,#productionUl {
+  display:block;
+  width:1360px;
+  height:120px;
+}
+#vipUl li,#productionUl li {
+  display:inline-block;
+  *display:inline;
+  width:160px;
+  height:120px;
+  margin-right:10px;
+}
+#vipUl img,#productionUl img{
+  width:100%;
+  height:100%;
+}
+/*Article for minddle of Join the Association*/
+#joinAssoc {
+  display:inline-block;
+}
+/*Article for minddle of AD.*/
+#adMid {
+  display:inline-block;
+}
+#adMid img {
+  margin:20px 0;
+}
+/*Article for leave Message*/
+#leaveMess {
+  position:relative;
+  display:inline-block;
+  height:200px;
+  background-image:url("../img/leaveMess.png");
+  unselectable:false;
+  -moz-user-select:false;
+  onselectstart:ture;
+  -webkit-user-select:false;
+}
+#leaveMess textarea {
+  position:absolute;
+  left:25px;
+  top:35px;
+  font-size:15px;
+  background:inherit;
+  overflow-y:auto;
+  resize:none;
+  border:none;
+  outline:none;
+}
+#leaveMessDiv {
+  position:absolute;
+  left: 50px;
+  top: 170px;
+  font-size:15px;
+}
+#leaveMessDiv input {
+  width:150px;
+  border:none;
+  outline:none;
+}
+#leaveMess i {
+  color:red;
+  cursor:pointer;
+}
+#leaveMess i:active {
+  color:blue;
+  cursor:pointer;
+}
+/*
+  Article for friend link
+*/
+
+#fLink {
+  position:relative;
+  margin:20px 0;
+  padding:10px;
+  border-top:1px solid #333;
+  border-bottom:1px solid #333;
+  text-align:center;
+}
+#fLink header {
+  position:absolute;
+  left:20px;
+  display:block;
+  padding-top:4px;
+  font-size:28px;
+  width:28px;
+  height:120px;
+  color:white;
+  background-color:#ddd;
+}
+#fLink ul {
+  width:888px;
+  margin:30px 0 30px 50px;
+}
+#fLink li {
+  display:inline-block; 
+  padding:2px 0;
+}
+#fLink img{
+  display:inline-block;
+  width:148px;
+  height:33px;
+}
