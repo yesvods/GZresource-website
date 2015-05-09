@@ -18,14 +18,14 @@
     <div id="topImg">
       <img src="./img/index_02.gif" alt="首页顶图" usemap="#topMap"/>
       <map name="topMap">
-        <area shape="rect" coords="724,0,854,28" href="javascript:void(0);" alt="" /> 
-        <area shape="rect" coords="854,0,955,28" href="javascript:void(0);" alt="" /> 
+        <area shape="rect" coords="724,0,854,28" href="javascript:void(0);" alt="" />
+        <area shape="rect" coords="854,0,955,28" href="javascript:void(0);" alt="" />
       </map>
       <div id="searchDiv">
         <input type="text" id="searchContent"/><a href="javascript:void(0);" class="fa fa-search"></a>
       </div>
     </div>
-    
+
     <nav>
       <ul id="topNavUl">
         <li><a href="/">首页</a>
@@ -39,7 +39,7 @@
         </li><li><a href="javascript:void(0);">协会期刊</a>
         </li><li><a href="javascript:void(0);">联系我们</a>
         </li>
-      </ul> 
+      </ul>
     </nav>
    </header>
    <section id="postSection">
@@ -54,7 +54,7 @@
            <%for(var mo in moduleName){%>
             <optgroup label="-------------"></optgroup>
             <%for(var name in moduleName[mo]){%>
-              <option value=<%=name%> ><%=moduleName[mo][name]%> 
+              <option value=<%=name%> ><%=moduleName[mo][name]%>
             <%}%>
            <%}%>
           </select>
@@ -116,7 +116,7 @@
         }
       }
     });
-    
+
    });
    /*
     the excel effect
@@ -147,7 +147,7 @@
     */
     var count = 0;
     $('#fileUploadLi>i').click(function(){
-      
+
       $('#fileUploadUl').append($('<li><i class="fa fa-times"></i><input type="file" name="file'+(count++)+'"/></li>'));
       $('#fileUploadUl li:last i').click(function(){
         $(this).parent().remove();
@@ -156,11 +156,11 @@
     function parseData(data) {
       var result = "";
       for(var i in _.keys(data)){
-        
+
       }
     }
    </script>
-   
+
    <script>
     var use_worker = true;
     function xlsworker(data, cb) {
@@ -198,10 +198,10 @@
 
     function to_csv(workbook) {
       var result = {};
-      
+
       workbook.SheetNames.forEach(function(sheetName) {
         var csv = XLS.utils.make_csv(workbook.Sheets[sheetName]);
-        
+
         if(csv.length > 0){
           result[sheetName] = csv;
         }
@@ -234,7 +234,7 @@
 
     function process_wb(wb) {
       if(typeof Worker !== 'undefined') XLS.SSF.load_table(wb.SSF);
-      
+
       var result = "";
       switch(get_radio_value("format")) {
         case "json":
@@ -246,7 +246,7 @@
         default:
           output = to_csv(wb);
       }
- 
+
       window.oo = output;
       _.each(_.keys(output), function(key){
         result+="<p>"+key+":</p>";
@@ -266,7 +266,7 @@
       html+=result;
       editor.html(html);
     }
-  
+
     var drop = document.getElementById('drop');
     function handleDrop(e) {
       e.stopPropagation();

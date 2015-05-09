@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./css/font-awesome.min.css" />
   <link rel="stylesheet" href="./css/frame.css" />
   <link rel="stylesheet" href="./css/index.css" />
-  
+
   <!--[if lt IE 9]>
   <script src="./js/html5shiv.js"></script>
   <![endif]-->
@@ -17,18 +17,18 @@
     <div id="topImg">
       <img src="./img/index_02.gif" alt="首页顶图" usemap="#topMap"/>
       <map name="topMap">
-        <area shape="rect" coords="724,0,854,28" href="" alt="" /> 
-        <area shape="rect" coords="854,0,955,28" href="" alt="" /> 
+        <area shape="rect" coords="724,0,854,28" href="" alt="" />
+        <area shape="rect" coords="854,0,955,28" href="" alt="" />
       </map>
       <div id="searchDiv">
         <input type="text" id="searchContent"/><a href="" class="fa fa-search"></a>
       </div>
     </div>
-    
+
     <nav>
       <ul id="topNavUl">
         <li><a href="/">首页</a>
-        </li><li><a href="/assocIntro">协会信息</a>
+        <!-- </li><li><a href="/assocIntro">协会信息</a>
         </li><li><a href="/rawPoicy">政策法规</a>
         </li><li><a href="/businessNew">行业资讯</a>
         </li><li><a href="/exportRequest">商圈</a>
@@ -36,9 +36,18 @@
         </li><li><a href="/weeklyPrice">价格行情</a>
         </li><li><a href="/showVIP">会员服务</a>
         </li><li><a href="/assocMag">协会期刊</a>
-        </li><li><a href="/contactUs">联系我们</a>
+        </li><li><a href="/contactUs">联系我们</a> -->
+        </li><li><a href="javascript:void(0);">协会信息</a>
+        </li><li><a href="javascript:void(0);">政策法规</a>
+        </li><li><a href="javascript:void(0);">行业资讯</a>
+        </li><li><a href="javascript:void(0);">商圈</a>
+        </li><li><a href="javascript:void(0);">最新通知</a>
+        </li><li><a href="javascript:void(0);">价格行情</a>
+        </li><li><a href="javascript:void(0);">会员服务</a>
+        </li><li><a href="javascript:void(0);">协会期刊</a>
+        </li><li><a href="javascript:void(0);">联系我们</a>
         </li>
-      </ul> 
+      </ul>
     </nav>
    </header>
    <section>
@@ -472,7 +481,7 @@
         $(this).after($msg);
         e.preventDefault();
       }
-      
+
     });
     $('#subMess').click(function(){
       var $msg = $(this).next("p");
