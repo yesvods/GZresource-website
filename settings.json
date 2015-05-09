@@ -1,8 +1,5 @@
-{	
-	"dbSetting":{
-		"db":"recycle",
-		"host":"localhost"
-	},
+{
+	"url": "mongodb://zenjayjay:a12093487@ds053139.mongolab.com:53139/blog",
 	"cookieSecret":"recycleWebsite",
 	"moduleName":{
 		"assocInfo":{

@@ -4,7 +4,7 @@ var crypto = require('crypto'),
     Post = require('../models/post.js'),
     Mess = require('../models/mess.js'),
     _ = require('underscore'),
-	settings = require("settings.json")
+	settings = require("../settings.json")
     DBRef = require('mongodb').DBRef,
     ObjectId = require('mongodb').ObjectID;
 /*

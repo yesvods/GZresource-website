@@ -10,7 +10,7 @@ var path = require('path');
 var MongoStore = require('connect-mongo')(express);
 var fs = require('fs');
 var formidable = require("formidable");
-var settings = require('settings');
+var settings = require('./settings.json');
 var flash = require('connect-flash');
 var _ = require('underscore');
 var app = express();
@@ -30,11 +30,8 @@ app.use(express.methodOverride());
 app.use(express.cookieParser());
 app.use(express.session({
   secret:settings.cookieSecret,
-  key:settings.dbSetting.db,
   cookie:{maxAge:1000*60*60*24*30},
-  store:new MongoStore({
-    db:settings.dbSetting.db
-  })
+  url: settings.url
 }));
 app.use(app.router);
 
@@ -59,7 +56,7 @@ function uploadImg(req, res, next) {
     form.keepExtensions = true; //keep .jpg/.png
     var folderName = new Date().format('yyyy-MM-dd');
     var dirPath = __dirname + '/public/kindeditor/attached/' + folderName + "/";
-    
+
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath);
     }
