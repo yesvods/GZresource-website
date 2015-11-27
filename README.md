@@ -1,7 +1,6 @@
 ![resource](http://gzresource-website.herokuapp.com/img/join.png)
 
 # Resource Recycle Website #
- [广州再生行业协会网站](http://gzresource-website.herokuapp.com/)
 
 ### [view the websize](http://gzresource-website.herokuapp.com/) Power By Herku
 
